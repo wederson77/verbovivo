@@ -1,0 +1,60 @@
+
+
+#carrossel{
+  position: relative;
+  width: 800px;
+  height: 400px;
+  margin-left: 5rem;
+  margin-bottom: 5rem;
+  margin-top: -3.5rem;
+  box-sizing: border-box;
+  border-radius: 20px;
+  /* border: 1px solid red; */
+  background-color: #ebd0a7;
+ /* display: "inline-block"; Faz a div se ajustar ao tamanho do conteúdo */
+  overflow: "hidden";  /*Evita que conteúdos extras escapem*/ 
+  box-shadow: 0 4px 8px rgba(0, 0, 1, 1); 
+
+}
+
+#carrossel img{
+  /* box-sizing: border-box; */
+  position: absolute;
+  border: 5px solid #B0BEC5;
+  border-radius: 22px;
+  display: block; 
+  width: 100% ; 
+  height: 100% ; 
+  transition: "opacity 3.5s ease-in-out"; 
+}
+
+
+#carrossel img.active {
+  opacity: 1;
+}
+
+
+/* Carousel.css */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 1s ease-in-out;
+}
+
+
+@media (max-width: 768px){
+    #carrossel{
+        display: none;
+      }
+
+      #carrossel img{
+        display: none;
+      }
+}

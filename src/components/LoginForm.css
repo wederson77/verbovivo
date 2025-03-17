@@ -1,0 +1,144 @@
+/* Estilo principal para o contêiner */
+.login-model {
+    border: 2px solid #85C88A; /* Verde suave para o contorno */
+    border-radius: 12px;
+    background: linear-gradient(145deg, #EAF6E9, #CFF0D6); /* Fundo em tons de verde claro */
+    height: 400px;
+    width: 400px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Estilo para o formulário */
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Espaçamento consistente entre os elementos */
+}
+
+/* Campos de entrada */
+.login-form input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #A0D4A1; /* Tom de verde leve */
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    font-size: 1rem;
+    color: #4A4A4A;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+.login-form input:focus {
+    border-color: #66BB6A; /* Verde mais intenso ao focar */
+    outline: none;
+}
+
+/* Botão de login */
+.botao-login {
+    width: 90%;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #66BB6A; /* Verde principal */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botao-login:hover {
+    background-color: #57A65A; /* Verde escuro ao passar o mouse */
+}
+
+.botao-login:active {
+    background-color: #4E9251; /* Verde mais escuro ao clicar */
+}
+
+/* Link de cadastro */
+#cadastro {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #EAF6E9; /* Verde como cor de destaque */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+#cadastro:hover {
+    color: #57A65A; /* Tom mais escuro ao passar o mouse */
+}
+
+/* Estilo para texto de cabeçalho */
+.login-model h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4A4A4A;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+/* Estilo para o botão de fechar (X) */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #4A4A4A;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #E74C3C; /* Vermelho ao passar o mouse */
+}
+
+.success-message {
+    background-color: #dff0d8;
+    color: #3c763d;
+    padding: 12px;
+    border: 1px solid #d6e9c6;
+    border-radius: 8px;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}
+
+#error-message{
+    display: inline;
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    width: 70%;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .login-model {
+        margin-top: -3rem;
+        width: 70%;
+        height: auto;
+        padding: 15px;
+    }
+}
