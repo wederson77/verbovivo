@@ -36,11 +36,11 @@ const MainContent = ({
   };
 
   const frasesAvatar = [
-    `${getSaudacao()}! Que bom te ver por aqui! Fique à vontade e aproveite ao máximo.`,
-    "Eita! Algo deu errado? Tente recarregar a página cliando na logo e volte rapidinho! 😅",
-    "Olha só quem chegou! Sua presença já torna tudo mais especial.",
-    "Gostando da experiência? Com sua ajuda, podemos ir ainda mais longe!",
-    "Você é incrível! Se puder, apoie nosso projeto e espalhe essa mensagem.",
+    `${getSaudacao()}! Que bom te ver por aqui! Digite uma palavra para pesquisar versículos! 🧐`,
+    "Eita! Algo deu errado? Tente recarregar a página ou clique na logo e volte rapidinho!😅",
+    "Sua doação faz a diferença. Espalhe a Palavra. 🙏📖",
+    "Obrigado por usar o Verbo Vivo! Sua presença aqui fortalece nossa missão e nos inspira a continuar.🌟💬",
+    "Doe via PIX é rápido, fácil e seguro. Com sua ajuda, podemos continuar a levar a Palavra de Deus a mais pessoas. ❤🔐",
   ];
 
   const [indiceFraseTexto, setIndiceFraseTexto] = useState(0);

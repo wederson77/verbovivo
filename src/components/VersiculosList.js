@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import React, { useState, useRef } from "react";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faArrowLeft, faCopy } from "@fortawesome/free-solid-svg-icons";
 
@@ -16,36 +16,48 @@ const VersiculosList = ({
   const totalPages = Math.ceil(total / versiculosPorPagina);
   const [isModalVisible, setIsModalVisible] = useState(false);
 
+  // Criar um array de referências, garantindo que cada item tenha um ref único
+  const nodeRefs = useRef([]);
+
   const copyToClipboard = (text) => {
-    navigator.clipboard.writeText(text).then(() => {
-      setIsModalVisible(true);
-      setTimeout(() => setIsModalVisible(false), 2000);  // Esconde o modal após 2 segundos
-    }).catch((err) => {
-      console.error('Erro ao copiar para a área de transferência: ', err);
-    });
+    navigator.clipboard.writeText(text)
+      .then(() => {
+        setIsModalVisible(true);
+        setTimeout(() => setIsModalVisible(false), 2000); // Esconde o modal após 2 segundos
+      })
+      .catch((err) => {
+        console.error("Erro ao copiar para a área de transferência: ", err);
+      });
   };
 
   return (
     <div id="versiculos-listagem">
       <TransitionGroup component="ul" className="versiculos-container">
-        {versiculos.map((versiculo, index) => (
-          <CSSTransition
-            key={index}
-            timeout={500}
-            classNames="versiculo-transition"
-          >
-            <li className="versiculo-card">
-              <strong className="titulo-versiculo">
-                {versiculo.livro.trim()}:{versiculo.texto  }
-              </strong>
-              <FontAwesomeIcon
-                icon={faCopy}
-                className="copy-icon"
-                onClick={() => copyToClipboard(`${versiculo.livro.trim()} - ${versiculo.texto}`)}
-              />
-            </li>
-          </CSSTransition>
-        ))}
+        {versiculos.map((versiculo, index) => {
+          if (!nodeRefs.current[index]) {
+            nodeRefs.current[index] = React.createRef();
+          }
+
+          return (
+            <CSSTransition
+              key={index}
+              timeout={500}
+              classNames="versiculo-transition"
+              nodeRef={nodeRefs.current[index]} // Usando ref único para cada item
+            >
+              <li className="versiculo-card" ref={nodeRefs.current[index]}>
+                <strong className="titulo-versiculo">
+                  {versiculo.livro.trim()}:{versiculo.texto}
+                </strong>
+                <FontAwesomeIcon
+                  icon={faCopy}
+                  className="copy-icon"
+                  onClick={() => copyToClipboard(`${versiculo.livro.trim()} - ${versiculo.texto}`)}
+                />
+              </li>
+            </CSSTransition>
+          );
+        })}
       </TransitionGroup>
 
       {/* Modal de Confirmação */}
