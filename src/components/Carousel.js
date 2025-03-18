@@ -19,12 +19,14 @@ const Carousel = () => {
 
   return (
     <div id="carrossel">
-      <img
-        key={currentIndex}  // Isso força a recriação da imagem
-        className="fadeIn"
-        src={images[currentIndex]}
-        alt={`Imagem ${currentIndex + 1}`}
-      />
+      <a href="https://pix-interface.vercel.app/" target="_blank" rel="noopener noreferrer">
+        <img
+          key={currentIndex}  // Isso força a recriação da imagem
+          className="fadeIn"
+          src={images[currentIndex]}
+          alt={`Imagem ${currentIndex + 1}`}
+        />
+      </a>
     </div>
   );
 };

@@ -210,6 +210,13 @@ label {
   font-weight: bold;
 }
 
+.highlight {
+  background-color: yellow; /* Destaque em amarelo */
+  font-weight: bold; /* Deixa o texto em negrito */
+  font-size: 19px;
+}
+
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -234,6 +241,13 @@ label {
      height: auto;
      transition: height 0.1s ease-in-out; 
     }
+
+    .highlight {
+      background-color: yellow; /* Destaque em amarelo */
+      font-weight: bold; /* Deixa o texto em negrito */
+      font-size: 17px;
+    }
+    
     
     /* Responsive Design */
     @media (max-width: 768px) {
